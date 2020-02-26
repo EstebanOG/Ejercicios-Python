@@ -1,13 +1,16 @@
-//#include "raiz.h"
 #include<iostream>
 #include<cmath>
-/*#pragma once*/
 
 using namespace std;
 
 void leerCoeficientes (float &a, float &b, float &c){
-	cout << "Ingrese los valores de a b y c de la ecuacion" << endl;
-	cin >> a >> b >> c;
+	cout << "Ingrese los valores de los coeficientes(a, b y c) de la ecuacion" << endl;
+	cout<<"a: ";
+	cin >> a;
+	cout<<"b: ";
+	cin >> b;
+	cout<<"c: ";
+	cin >> c;
 }
 
 int discriminante (float a, float b, float c, float &disc, int &tiporaiz){
@@ -25,32 +28,30 @@ int discriminante (float a, float b, float c, float &disc, int &tiporaiz){
 return tiporaiz;
 }
 void raicesIguales(float a, float b, float &x1,float &x2,float disc){
-	x1 = x2 = (-b*disc / (2 * a));
+	x1 = x2 = (-b / (2 * a));
 	
-	cout << "los tipos de raices son iguales" << endl;
-	cout << "El valor de la raiz es de = " << discriminante << endl;
-	cout << "Los resultados de la ecuacion es" << endl;
-	cout << "x1=" << x1 << endl;
-	cout << "x2=" << x2 << endl;
+	cout<<"El discriminante es cero, por lo cual tiene una unica solucion."<<endl;
+	cout << "El resultado de la ecuacion es: " << endl;
+	cout << "x1 = " << x1 << endl;
+	cout << "x2 = " << x2 << endl;
 }
 
 void raicesNormales(float a, float b, float &x1, float &x2, float &disc  ){
 	x1 = (((-1 * (b)) - sqrt(disc)) / 2 * a);
 	x2 = (((-1 * (b)) + sqrt(disc)) / 2 * a);
-	cout << "los tipos de raices son normales" << endl;
-	cout << "El valor de la raiz es de = " << disc << endl;
-	cout << "Los resultados de la ecuacion es" << endl;
-	cout << "x1=  " << x1 << endl;
+	cout<<"El discriminante es mayor a cero, por lo cual tiene dos soluciones reales."<<endl;
+	cout << "El resultado de la ecuacion es: " << endl;
+	cout << "x1 = " << x1 << endl;
 	cout << "x2 = " << x2 << endl;
 }
 
 void raicesImaginarias(float a, float b, float &x1, float &x2, float &disc ){
+	
 	x1 = (-b +(disc))/ (2 * a);
 	x2 = (-b+-(disc))/ ( 2*a);
 
-	cout << "los tipos de raices son imaginarias" << endl;
-	cout << "El valor de la raiz es de = " << disc<< endl;
-	cout << "Los resultados de la ecuacion es" << endl;
+	cout<<"El discriminante es menor a cero, por lo cual tiene una dos soluciones."<<endl;
+	cout << "El resultado de la ecuacion es: " << endl;
 	cout << "x1=" << x1 << " + " << x2 << "i" << endl;
 	cout << "x2=" << x1 << " - " << x2 << "i" << endl;
 }
@@ -59,6 +60,8 @@ int main(void){
 	float a, b, c;
 	float x1, x2, disc;
 	int tiporaiz;
+	cout<<"Programa para calcular la solucion de la ecuacion expresada de la siguiente manera ax^2+bx+c=0"<<endl;
+	cout<<"----------------------------------------------------------------------------------------------"<<endl<<endl;
 	leerCoeficientes(a, b, c);
 	tiporaiz = discriminante(a, b, c, disc,tiporaiz);
 
@@ -71,6 +74,7 @@ int main(void){
 		break;
 		case -1:
 			raicesImaginarias(a, b, x1, x2, disc);
+		break;
 		default:
 		cout << "opcion invalida" << endl;
 	}
