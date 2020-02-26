@@ -76,7 +76,7 @@ int main(void){
 			raicesImaginarias(a, b, x1, x2, disc);
 		break;
 		default:
-		cout << "opcion invalida" << endl;
+		cout << "Opcion invalida" << endl;
 	}
 	
 	system("pause");
