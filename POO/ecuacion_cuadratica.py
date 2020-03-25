@@ -20,25 +20,31 @@ class Cuadratica:
             print("No es una ecuacion cuadratica ya que el coeficiente de x^2 es 0")
     def solucion(self):
         if(self.tipo_raiz==0):
-            x1 = x2 = (-self.b / (2 * self.a))
-            print("El discriminante es cero, por lo cual tiene una unica solucion.")
-            print("El resultado de la ecuacion es: ")
-            print("x1 = ", x1)
-            print("x2 = ", x2)
+            self.raices_iguales()
         elif(self.tipo_raiz==1):
-            x1 = (((-1 * (self.b)) - math.sqrt(self.disc)) / 2 * self.a);
-            x2 = (((-1 * (self.b)) + math.sqrt(self.disc)) / 2 * self.a);
-            print("El discriminante es mayor a cero, por lo cual tiene dos soluciones reales.")
-            print("EL resultado de la ecuacion es:")
-            print("x1 = ", x1)
-            print("x2 = ", x2)
+            self.raices_normales()
         else:
-            x1 = (-self.b + (self.disc)) / (2 * self.a);
-            x2 = (-self.b + -(self.disc)) / (2 * self.a);
-            print("El discriminante es menor a cero, por lo cual tiene dos soluciones.")
-            print("El resultado de la ecuacion es:")
-            print("x1 = ", x1, " + ", x2, " i ")
-            print("x2 = ", x1, " - ", x2, " i ")
+            self.raices_imaginarias()
+    def raices_iguales(self):
+        x1 = x2 = (-self.b / (2 * self.a))
+        print("El discriminante es cero, por lo cual tiene una unica solucion.")
+        print("El resultado de la ecuacion es: ")
+        print("x1 = ", x1)
+        print("x2 = ", x2)
+    def raices_normales(self):
+        x1 = (((-1 * (self.b)) - math.sqrt(self.disc)) / 2 * self.a);
+        x2 = (((-1 * (self.b)) + math.sqrt(self.disc)) / 2 * self.a);
+        print("El discriminante es mayor a cero, por lo cual tiene dos soluciones reales.")
+        print("EL resultado de la ecuacion es:")
+        print("x1 = ", x1)
+        print("x2 = ", x2)
+    def raices_imaginarias(self):
+        x1 = (-self.b + (self.disc)) / (2 * self.a);
+        x2 = (-self.b + -(self.disc)) / (2 * self.a);
+        print("El discriminante es menor a cero, por lo cual tiene dos soluciones.")
+        print("El resultado de la ecuacion es:")
+        print("x1 = ", x1, " + ", x2, " i ")
+        print("x2 = ", x1, " - ", x2, " i ")
 
 
 print("Programa para calcular la solucion de la ecuacion expresada de la siguiente manera ax^2+bx+c=0")
