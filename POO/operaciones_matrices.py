@@ -119,6 +119,7 @@ while True:
             print("La opción es invalida")
         if opcion != 5:
             break
-    cerrar = int(input("Si desea salir ingrese 0: "))
-    if cerrar == 0:
+    cerrar = input("Si desea salir ingrese 0: ")
+    str(cerrar)
+    if cerrar == "0":
         break

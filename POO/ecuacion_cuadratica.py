@@ -60,6 +60,7 @@ while True:
     c = float(input("c: "))
     respuesta = Cuadratica(a,b,c)
     respuesta.solucion()
-    siguiente = int(input("Si desea salir ingrese 0: "))
-    if siguiente == 0:
+    cerrar = input("Si desea salir ingrese 0: ")
+    str(cerrar)
+    if cerrar == "0":
         break
