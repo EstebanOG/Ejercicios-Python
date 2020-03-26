@@ -49,9 +49,17 @@ class Cuadratica:
 
 print("Programa para calcular la solucion de la ecuacion expresada de la siguiente manera ax^2+bx+c=0")
 print("----------------------------------------------------------------------------------------------")
-print("Ingrese los valores de los coeficientes(a, b y c) de la ecuacion")
-a = float(input("a: "))
-b = float(input("b: "))
-c = float(input("c: "))
-respuesta = Cuadratica(a,b,c)
-respuesta.solucion()
+while True:
+    print("Ingrese los valores de los coeficientes(a, b y c) de la ecuacion")
+    print("Recuerde que el coeficiente de x^2 debe ser diferente de 0")
+    while True:
+        a = float(input("a: "))
+        if(a != 0):
+            break
+    b = float(input("b: "))
+    c = float(input("c: "))
+    respuesta = Cuadratica(a,b,c)
+    respuesta.solucion()
+    siguiente = int(input("Si desea salir ingrese 0: "))
+    if siguiente == 0:
+        break
