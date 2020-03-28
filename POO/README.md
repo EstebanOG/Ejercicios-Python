@@ -4,4 +4,5 @@
 |operaciones_matrices|Ejercicio que hace operaciones entre matrices como suma, resta y multiplicación y traspuesta en le lenguaje python|
 |palindromo|Ejercicio que verifica si un texto ingresado es palindromo|
 |conversion_romanos|Ejercicio que convierte un número arábigo a romano|
+|magnitud_vector|Ejercicio que calcula la norma de un vector|
 
